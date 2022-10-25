@@ -1,0 +1,26 @@
+.teamsGap{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 30rem;
+}
+
+.teamsContainer img{
+    margin-right: .5rem;
+    width: 1.5rem;
+}
+
+.teamsContainer a{
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: .15s;
+    margin: 1rem 2rem;
+}
+
+.teamsContainer a:hover{
+    color: rgb(67,186,227);
+}

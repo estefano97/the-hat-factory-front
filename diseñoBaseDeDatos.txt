@@ -1,0 +1,65 @@
+Base De Datos The Hat Factory
+
+/***usuarios***/
+usuario_id
+nombreCompleto
+telefono
+email
+userPass
+idHistorialCompras
+
+CREATE TABLE usuarios(
+	user_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    NombreCompleto VARCHAR(256) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+	email VARCHAR(80) UNIQUE NOT NULL,
+	userPass VARCHAR(256) NOT NULL,
+	idHistorialCompras TEXT DEFAULT 'NULL'
+);
+
+
+/***productos***/
+producto_id
+imageName
+titulo
+descripcion
+colores
+precio
+categoria_id
+liga (Creare Una Tabla Por Liga Para Agilizar Las Consultas)
+equipo
+
+CREATE TABLE users(
+	producto_id VARCHAR(15) PRIMARY KEY,
+    	imageURL VARCHAR(100) NOT NULL,
+	productName VARCHAR(70) NOT NULL
+    	titulo VARCHAR(70) NOT NULL,
+	descripcion VARCHAR(100) UNIQUE NOT NULL,
+	colores VARCHAR(25) NOT NULL,
+	precio VARCHAR(4) NOT NULL,
+	categoria_id VARCHAR(20) NOT NULL,
+	equipo VARCHAR(100) NOT NULL,
+);
+
+
+
+
+/***comprasRealizadas***/
+compra_id
+usuarioComprador_id
+producto_id
+precio_id
+compraStatus
+fechaCompra
+
+/***categories***/
+Gorra = 1
+Pantalon = 2
+Camiseta = 3
+Zapatos = 4
+Otro = 5
+
+
+
+
+

@@ -1,0 +1,35 @@
+.mainPreview{
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .3);
+    display: block;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    padding-top: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin: 2rem auto;
+}
+
+
+.mainPreview img{
+    width: 90%;
+}
+
+.mainPreview h3{
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.mainPreview p{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: .5rem 0;
+    border-top: 1px solid black;
+    border-radius: 0 0 20px 20px;
+}
+
+.mainPreview b{
+    color: green;
+}
