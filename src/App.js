@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, Navigate } from 'react-router';
+import './App.css';
 import ProductPage from './components/ProductPage';
 import Header from './pages/Header';
 import Home from './pages/Home';
