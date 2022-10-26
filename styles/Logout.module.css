@@ -1,0 +1,29 @@
+.LogoutContainer{
+    text-align: center;
+    margin: 8rem 0;
+    font-size: 2rem;
+}
+.LogoutContainer button{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    padding: .5rem 1rem;
+    background-color: rgb(33,28,102);
+    cursor: pointer;
+}
+
+.LogoutContainer button:first-child{
+    background-color: red;
+}
+
+.LogoutContainer button:active{
+    transform: scale(1.1);
+}
+
+.LogoutContainer > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

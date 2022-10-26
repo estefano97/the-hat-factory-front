@@ -1,0 +1,73 @@
+.TemplateFavContainer{
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem auto;
+    width: 25rem;
+    height: 22rem;
+    margin: 1rem;
+}
+
+.TemplateFavContainer > h3{
+    text-align: center;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.FavImageAndActions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.FavImageAndActions > img{
+    width: 90%;
+    margin: 1rem auto;
+}
+
+
+.FavActions{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    border-radius: 0 0 8px 8px;
+    background-color: rgb(33,28,102);
+    padding: .5rem 0;
+    width: 100%;
+}
+
+.FavActions button{
+    background-color: rgb(33,28,102);
+    border: none;
+    color: red;
+    font-size: 2rem;
+}
+
+.FavActions a:first-child{
+    color: white;
+}
+
+
+@media screen and (max-width:550px) {
+    .TemplateFavContainer{
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 1rem auto;
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .TemplateFavContainer{
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 1rem auto;
+        width: 18rem;
+    }
+}

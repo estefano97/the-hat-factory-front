@@ -1,0 +1,44 @@
+.profileContent{
+    width: 100%;
+    margin: 5rem auto;
+}
+
+.profileTitle{
+    margin-bottom: 3rem;
+    color: grey;
+    text-align: center;
+}
+
+.profileTitle > h1{
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin: 0;
+    color: rgb(67,186,227);
+}
+
+.profileContent > a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.15rem;
+    width: 90%;
+    margin: 1rem auto;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .15rem 0;
+    transition: .5s;
+}
+
+.profileContent > a:active{
+    transform: scale(.9);
+}
+
+.profileContent > a > i{
+    margin: 0 1rem;
+    color: rgb(67,186,227);
+    font-weight: 700;
+}
+

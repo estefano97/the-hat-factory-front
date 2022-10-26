@@ -1,0 +1,90 @@
+.formContainer{
+    width: 90%;
+    margin: auto;
+}
+
+.formContainer > h3 > a{
+    text-decoration: none;
+    color: rgb(67,186,227);
+}
+
+.formTitle{
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.formTitle > h1{
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin: 0;
+    color: rgb(67,186,227);
+}
+
+.formTitle > p{
+    margin: .5rem 0;
+    color: grey;
+}
+
+.formStyles input{
+    border: none;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: .25rem;
+    margin: .5rem 0;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(173, 173, 173, .3);
+    transition: .25s;
+}
+
+.formStyles > input::placeholder{
+    color: rgb(185, 185, 185);
+}
+
+.formStyles > input:focus{
+    border-bottom: 1px solid rgb(67,186,227);
+}
+
+.formStyles > input[type="submit"] {
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    padding: .5rem 0;
+    background-color: rgb(33,28,102);
+}
+
+.formFooterText{
+    width: 90%;
+    text-align: center;
+    margin: 1rem auto;
+    color: gray;
+}
+
+.errorTexts{
+    margin: 2rem auto;
+    margin-top: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #dd2c29;
+    text-align: center;
+}
+
+.loaderContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    margin: auto;
+    width: 7.5rem;
+}

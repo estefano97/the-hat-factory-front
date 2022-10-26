@@ -1,0 +1,95 @@
+.containerLogin{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.loginTitle{
+    text-align: center;
+    margin: 2rem auto;
+    margin-bottom: 5rem;
+}
+
+.loginTitle > h1{
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin: 0;
+    color: rgb(67,186,227);
+}
+
+.loginTitle > p{
+    margin: .5rem 0;
+    color: grey;
+}
+
+.containerLogin > form{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.containerLogin > form > p{
+    margin: 0;
+    color: grey;
+}
+
+.containerLogin > h3 > a{
+    text-decoration: none;
+    color: rgb(67,186,227);
+}
+
+.containerLogin > form > input{
+    border: none;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: .25rem;
+    margin: .5rem 0;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(173, 173, 173, .3);
+    transition: .25s;
+}
+
+.containerLogin > form > input::placeholder{
+    color: rgb(185, 185, 185);
+}
+
+.containerLogin > form > input:focus{
+    border-bottom: 1px solid rgb(67,186,227);
+}
+
+.containerLogin > form > .submit{
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    padding: .5rem 0;
+    background-color: rgb(33,28,102);
+}
+
+.errorStyles{
+    font-weight: bold;
+    color: #dc3545;
+    margin: 0;
+    margin-top: 2rem;
+}
+
+.loaderContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader{
+    margin: auto;
+    width: 7.5rem;
+}

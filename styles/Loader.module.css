@@ -1,0 +1,13 @@
+.loaderContainer{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.loaderContainer > img{
+    margin-top: 5rem;
+    width: 5rem;
+}

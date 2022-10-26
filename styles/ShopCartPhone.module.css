@@ -1,0 +1,44 @@
+.mainContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    overflow-x: auto;
+    position: absolute;
+}
+
+.mainContentHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgb(16, 12, 59);
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .3);
+    color: white;
+}
+
+.mainContentHeader > h2{
+    font-size: 1.75rem;
+    margin: 0;
+    text-align: center;
+}
+
+.mainContentHeader button{
+    position: absolute;
+    left: 1rem;
+    border: none;
+    font-size: 2rem;
+    padding: 0 .5rem;
+    border-radius: .25rem;
+    background-color: #bb2124;
+    color: white;
+}
+
+.mainContentBody{
+    width: 100%;
+    text-align: center;
+}

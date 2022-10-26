@@ -1,0 +1,18 @@
+.compraContainer{
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.compraContainer > h3{
+    font-size: 1.5rem;
+}
+
+.dataBuy > p{
+    font-size: 1.25rem;
+}
+
+.productsBuy{
+    width: 70%;
+    margin: auto;
+    color: gray;
+}

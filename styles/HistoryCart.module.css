@@ -1,0 +1,65 @@
+.formStyles{
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.formStyles > input{
+    border: none;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: .25rem;
+    margin: .5rem 0;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(173, 173, 173, .3);
+    transition: .25s;
+}
+
+.formStyles > input::placeholder{
+    color: rgb(185, 185, 185);
+}
+
+.formStyles > input:focus{
+    border-bottom: 1px solid rgb(67,186,227);
+}
+
+.HistoryContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.HistoryContainer > p{
+    color: rgb(33,28,102);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 90%;
+}
+
+.HistoryContainer > form > .submit{
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    padding: .5rem 0;
+    background-color: rgb(33,28,102);
+}
+
+.errorStyles p{
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 1.5rem;
+    margin: 2rem auto;
+}
+
+.historyCompras{
+    text-align: center;
+}
+
+.historyCompras > h2{
+    color: rgb(33,28,102);
+}

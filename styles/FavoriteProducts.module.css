@@ -1,0 +1,27 @@
+.favoriteError{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+}
+
+.favoriteItems{
+    margin: 2rem auto;
+}
+
+.favoriteError > p{
+    color: grey;
+    margin-bottom: 3rem;
+}
+
+.favoriteContainer{
+    text-align: center;
+}
+
+.favoriteItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

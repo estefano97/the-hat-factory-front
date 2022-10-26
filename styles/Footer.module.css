@@ -1,0 +1,38 @@
+.footerContainer{
+    background-color: rgb(33,28,102);
+    color: white;
+    padding: .5rem 0;
+}
+
+.socialMedia{
+    width: 90%;
+    padding: 1rem 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.socialMedia i{
+    font-size: 3rem;
+    color: white;
+}
+
+.copyrightContainer{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+.copyrightContainer b{
+    font-size: 1.5rem;
+}
+
+.contentContainer{
+    text-align: center;
+}
+
+.contentContainer hr{
+    border-color: rgb(67,186,227);
+}

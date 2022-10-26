@@ -1,0 +1,110 @@
+.ProductPageContainer{
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.ContentContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 3rem auto;
+}
+
+.ContentContainer > *{
+    width: 40%;
+}
+
+.ContentContainer > h1{
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.ContentContainer > h2{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.ContentContainer > h2 > b{
+    color: green;
+}
+
+.ContentContainer > form  > h2{
+    margin: 0;
+}
+
+.ContentContainer > div >img{
+    width: 95%;
+    padding: 1rem .5rem;
+    border: 2px solid black;
+    margin-left: -.12rem;
+    margin-bottom: 5rem;
+}
+
+.tallaText{
+    color: grey;
+}
+
+.optionSelected{
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: .25rem 1rem;
+    outline: none;
+}
+
+.errorTexts{
+    margin: 2rem 0;
+    font-weight: 600;
+    color: #dd2c29;
+    text-align: center;
+}
+
+.addCart{
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    margin: .5rem 0;
+    padding: .5rem 0;
+    border: none;
+    background-color: rgb(33,28,102);
+}
+
+.addCart:active{
+    transform: scale(.95);
+}
+
+.addFav{
+    color: rgb(33,28,102);
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    margin: .5rem 0;
+    padding: .5rem 0;
+    border: 1px solid rgb(33,28,102);
+    background-color: white;
+}
+
+.addFav:active{
+    transform: scale(.95);
+}
+
+
+@media screen and (max-width:920px) {
+    .ContentContainer{
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .ContentContainer > *{
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .ContentContainer > div >img{
+        margin-bottom: 3rem;
+    }
+    
+}
