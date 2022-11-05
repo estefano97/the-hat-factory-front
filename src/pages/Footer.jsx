@@ -14,7 +14,7 @@ const Footer = () => {
                 <hr />
             </div>
             <div className={styles.copyrightContainer}>
-                <p><b>©</b> The Hat Factory 2021. Todos los derechos reservados</p>
+                <p><b>©</b> The Hat Factory 2023. Todos los derechos reservados</p>
             </div>
         </div>
     )

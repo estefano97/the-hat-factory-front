@@ -11,7 +11,7 @@ const CartPage = (props) => {
 
     return(
         <div className={styles.cartContainer}>
-            {window.innerWidth < 400 ? <Navigate replace to="/"/> : ""}
+            {window.innerWidth < 500 ? <Navigate replace to="/"/> : ""}
             {props.cartLS.length !== 0
             ? <div>
                <div className={styles.cartItems}>

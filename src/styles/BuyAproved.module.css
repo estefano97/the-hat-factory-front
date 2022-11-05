@@ -1,0 +1,22 @@
+.buyContainer{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.buyContainer > h1{
+    color: rgb(67,186,227);
+}
+
+.buyContainer > p{
+    color: grey;
+}
+
+.buyContainer > img{
+    margin: 2rem auto;
+    width: 50%;
+}

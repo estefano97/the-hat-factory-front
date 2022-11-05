@@ -12,7 +12,7 @@ export const LoginAuth = async (request) => {
           },
         }
       );
-
+      console.log(response);
       return response;
       
   } catch(ex) {

@@ -17,7 +17,7 @@ const helpHttp = () => {
 
         if(!options.body) delete options.body;
 
-        setTimeout(() => controller.abort(), 3000);
+        setTimeout(() => controller.abort(), 5000);
 
         return fetch(endpoint, options)
         .then(res => res.ok ? res.json() : Promise.reject({

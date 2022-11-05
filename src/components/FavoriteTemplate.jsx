@@ -3,7 +3,7 @@ import helpHttp from "../helpers/helpHttp";
 import styles from "../styles/FavoriteTemplate.module.css";
 
 const FavoriteTemplate = (props) => {
-
+    console.log(props)
     let link = props.data.imageURL.replace(/-/g," ");
     let name = props.data.productName.replace(/ /g,"-");
     const handleDelete = (e) => {

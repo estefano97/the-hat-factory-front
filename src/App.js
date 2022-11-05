@@ -6,8 +6,7 @@ import Header from './pages/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
-import Profile from './pages/Profile';
-import UserConfig from './pages/UserConfig';
+import Profile from './pages/Profile/index';
 import Register from './pages/Register';
 import HistoryCart from './pages/HistoryCart';
 import Footer from './pages/Footer';
@@ -22,6 +21,7 @@ import CerrarCompra from './pages/CerrarCompra';
 import SearchPage from './pages/SearchPage';
 import CartPage from './pages/CartPage';
 import BuyAproved from './pages/BuyAproved';
+import UserConfig from './pages/Profile/userConfig';
 
 function App() {
   

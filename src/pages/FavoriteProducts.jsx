@@ -24,7 +24,6 @@ const FavoriteProducts = (props) => {
     })
     .then(res => {
             let data = [];
-        
             for (const dataRes in res) {
                 helpHttp().post("https://kaal1.000webhostapp.com/API/favoriteUser", {
                     body: {
@@ -41,8 +40,9 @@ const FavoriteProducts = (props) => {
                 })
             }
         })
+        .catch(err => console.log(err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.userData.response.email]);
+    }, []);
     
     useEffect(() => {
         if(dataFavorite === null) return;
