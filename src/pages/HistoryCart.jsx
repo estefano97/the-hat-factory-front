@@ -15,7 +15,7 @@ const HistoryCart = (props) => {
     e.preventDefault();
 
     helpHttp()
-      .post("https://kaal1.000webhostapp.com/API/getCart", {
+      .post("http://localhost/the-hat-factory/getCart", {
         body: {
           email: datosUser.response.email,
           userPass: e.target.userPass.value,
@@ -43,7 +43,7 @@ const HistoryCart = (props) => {
 
   return (
     <div>
-      {props.userData.status ? "" : <Navigate replace to="/" />}
+      {props.userData.id ? "" : <Navigate replace to="/" />}
       {!Status ? (
         <div className={styles.HistoryContainer}>
           {!errorMessage ? (

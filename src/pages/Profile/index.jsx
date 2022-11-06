@@ -9,9 +9,9 @@ const Profile = (props) => {
 
   return (
     <div className={styles.profileContent}>
-      {props.userData.status ? "" : <Navigate replace to="/" />}
+      {props.userData.id ? "" : <Navigate replace to="/" />}
       <div className={styles.profileTitle}>
-        <h1>¡Hola, {datosUser.response.nombreCompleto}!</h1>
+        <h1>¡Hola, {datosUser.nombreCompleto}!</h1>
         <p>Aquí puedes ver y editar la información de tu cuenta</p>
       </div>
 

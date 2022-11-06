@@ -1,19 +1,11 @@
-import helpHttp from "../helpers/helpHttp";
+import axios from "axios";
 
 export const LoginAuth = async (request) => {
   try{
-    let response = await helpHttp().post(
-        "https://kaal1.000webhostapp.com/API/loginUser",
-        {
-          body: request,
-          Headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      );
-      console.log(response);
-      return response;
+    let response = await axios.post(
+        "https://localhost:44345/api/auth/login",request);
+      console.log(response.data);
+      return response.data;
       
   } catch(ex) {
     console.error(ex);

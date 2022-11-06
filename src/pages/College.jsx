@@ -10,7 +10,7 @@ function College() {
   const [responseAPI, setResponseAPI] = useState(null);
 
   useEffect(() => {
-    helpHttp().get("https://kaal1.000webhostapp.com/API/CollegeProducts")
+    helpHttp().get("http://localhost/the-hat-factory/CollegeProducts")
       .then(res => {
         if(res === "no hay valores") return;
         setResponseAPI(res);
@@ -27,7 +27,7 @@ function College() {
           let link = el.productName.replace(/ /g,"-");
           return <PreviewHat
             key={key}
-            link={`/products/${link}`}
+            link={`/products/${el.id}`}
             image={el.imageURL}
             name={el.productName}
             price={el.precio} />;

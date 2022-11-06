@@ -29,7 +29,7 @@ export const useRegister = (initialForm, validateForm) => {
 
         if(Object.keys(errors).length === 0) {
             setLoading(true);
-            helpHttp().post("https://kaal1.000webhostapp.com/API/registerUser", {
+            helpHttp().post("https://localhost:44345/api/auth/register", {
                 body: form.response,
                 Headers: {
                     "Content-Type":"application/json",

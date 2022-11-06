@@ -27,7 +27,7 @@ const CerrarCompra = (props) => {
 
     const onSubmitCupon = (e) => {
         e.preventDefault();
-        helpHttp().post(`https://kaal1.000webhostapp.com/API/discount`, {
+        helpHttp().post(`http://localhost/the-hat-factory/discount`, {
         body: {
             cupon: discount
         }})
@@ -47,7 +47,7 @@ const CerrarCompra = (props) => {
 
     return (
         <div className={styles.cerrarCompraContainer}>
-                {datosUser.status ? "" : <Navigate replace to="/"/>}
+                {datosUser.id ? "" : <Navigate replace to="/"/>}
                 <div className={styles.cuponTitleContainer}>
                     <div>
                         <h2>Items En El Carrito:</h2>

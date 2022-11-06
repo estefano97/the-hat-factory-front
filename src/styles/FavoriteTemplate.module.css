@@ -49,6 +49,10 @@
     font-size: 2rem;
 }
 
+.FavActions button:hover{
+    cursor: pointer;
+}
+
 .FavActions a:first-child{
     color: white;
 }

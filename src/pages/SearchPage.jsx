@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
@@ -12,67 +13,43 @@ const SearchPage = () => {
     const {orderSearch} = useParams();
 
     const [busquedaItems, setBusquedaItems] = useState(null);
-    const [valoresNull, setValoresNull] = useState(false);
+    const [IsLoading, setIsLoading] = useState(true);
     
     let terminoBusqueda = searchPath.replace(/-/g," ").toLowerCase();
 
     useEffect(() => {
-        helpHttp().get("https://kaal1.000webhostapp.com/API/homeHats")
-        .then(res => {
-            if(res === "no hay valores") return;
-            let valores = [];
-            let precios = [];
-            // eslint-disable-next-line array-callback-return
-            res.map((el) => {
-                if(el.productName.toLowerCase().includes(terminoBusqueda)) {
-                    valores.push(el);
-                    precios.push(el.precio);
-                }
-            })
-            if(valores.length > 0) {
-                setValoresNull(true);
-            } else {
-                setValoresNull(false);
-            }
+        setIsLoading(true);
 
-            if(orderSearch === "price") {
-                valores.sort((a, b) => {
-                    return a.precio - b.precio;
-                });  
-            }
-            if (orderSearch === "alphabet") {
-                valores.sort((a, b) => {
-                    const nameA = a.productName.toLowerCase();
-                    const nameB = b.productName.toLowerCase();
-                    if (nameA < nameB) {return -1;}
-                    if (nameA > nameB) {return 1;}
-                    return 0;
-                });
-            }
-            setBusquedaItems(valores);
+        let url = `https://localhost:44345/api/products`;
+        if(terminoBusqueda) url += `?Nombre=${terminoBusqueda}`;
+        if(orderSearch) url += `&OrderBy=${orderSearch}`;
+
+        axios.get(url)
+        .then(res => {
+            setBusquedaItems(res.data);
           })
+        .finally(() => setIsLoading(false));
           window.scrollTo(0, 0);
       }, [orderSearch, terminoBusqueda]);
     return(
         <div className={styles.searchContainer}>
-            {busquedaItems
-            ? busquedaItems.map((el, key) => {
-                let link = el.productName.replace(/ /g,"-");
+            {!IsLoading
+            ? busquedaItems.length < 0
+            ? <div className={styles.notFoundContainer}>
+                <img src="/ProductsIMGs/assets/notfound.png" alt="asdas" />
+                <p>No se encontraron coincidencias!</p>
+            </div>
+            : busquedaItems.map((el, key) => {
                 return <PreviewHat
                   key={key}
-                  link={`/products/${link}`}
-                  image={el.imageURL}
+                  link={`/products/${el.id}`}
+                  image={el.imageUrl}
                   name={el.productName}
                   price={el.precio} />;
               })
             : <Loader/>}
 
-            {busquedaItems && !valoresNull
-            ? <div className={styles.notFoundContainer}>
-                <img src="/ProductsIMGs/assets/notfound.png" alt="asdas" />
-                <p>No se encontraron coincidencias!</p>
-            </div>
-            : ""}
+            {}
         </div>
     )
 }

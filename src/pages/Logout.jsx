@@ -17,7 +17,7 @@ const Logout = (props) => {
 
     return(
         <div className={styles.LogoutContainer}>
-            {props.userData.status ? "" : <Navigate replace to="/"/>}
+            {props.userData.id ? "" : <Navigate replace to="/"/>}
             <h2>¿ Estas Seguro Que Deseas Cerrar Sesión ?</h2>
             <div>
                 <button onClick={HandleLogout}>Cerrar Sesión</button>

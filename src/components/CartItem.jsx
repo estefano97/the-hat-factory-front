@@ -4,7 +4,7 @@ import styles from "../styles/CartItem.module.css";
 const CartItem = (props) => {
 
     const { cartLS } = props;
-    let link = cartLS.productName.replace(/ /g,"-");
+    console.log(cartLS);
     let urlIMG = cartLS.productImage.replace(/-/g," ");
     
     const handleView = () => props.phoneCartMenu(false);
@@ -38,7 +38,7 @@ const CartItem = (props) => {
             <div className={styles.cartActions}>
                 <button><i className="fas fa-plus"></i></button>
                 <button><i onClick={handleDelete} data-talla={cartLS.talla} data-id={cartLS.producto_id} className="fas fa-trash-alt"></i></button>
-                <Link onClick={handleView} to={`../products/${link}`}><i className="far fa-eye"></i></Link>
+                <Link onClick={handleView} to={`../products/${cartLS.id}`}><i className="far fa-eye"></i></Link>
             </div>
         </div>
     )

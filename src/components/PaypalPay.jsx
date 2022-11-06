@@ -44,7 +44,7 @@ function PaypalPay (props) {
         valueBuy: detalles.purchase_units[0].amount.value
       };
 
-      helpHttp().post("https://kaal1.000webhostapp.com/API/buyAproved", {
+      helpHttp().post("http://localhost/the-hat-factory/buyAproved", {
         body: dataBuyApprove,
         Headers: {
             "Content-Type":"application/json",

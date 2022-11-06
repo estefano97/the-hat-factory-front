@@ -70,7 +70,7 @@ const Register = (props) => {
 
     return(
         <div className={styles.formContainer}>
-            {props.userData.status ? <Navigate replace to="/"/> : ""}
+            {props.userData.id ? <Navigate replace to="/"/> : ""}
 
             <div className={styles.formTitle}>
                 <h1>Registarte</h1>

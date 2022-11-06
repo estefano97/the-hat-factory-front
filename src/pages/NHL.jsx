@@ -3,38 +3,46 @@ import PreviewHat from '../components/PreviewHat';
 import styles from '../styles/Home.module.css';
 import helpHttp from '../helpers/helpHttp.js';
 import Loader from '../components/Loader';
+import axios from 'axios';
 
 function NHL() {
 
-  const [responseAPI, setResponseAPI] = useState(null);
+  const [Elements, setElements] = useState([]);
+  const [IsLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    helpHttp().get("https://kaal1.000webhostapp.com/API/nhlProducts")
-      .then(res => {
-        if(res === "no hay valores") return;
-        setResponseAPI(res);
+    setIsLoading(true);
+    axios
+      .get("https://localhost:44345/api/products?Liga=nhl")
+      .then((res) => {
+        setElements(res.data);
       })
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
     <main className={styles.mainContainer}>
       <h2>Gorras NHL</h2>
-      <div className={styles.mainContent}>
-      {responseAPI
-      ? responseAPI.map((el, key) => {
-          let link = el.productName.replace(/ /g,"-");
-          return <PreviewHat
-            key={key}
-            link={`/products/${link}`}
-            image={el.imageURL}
-            name={el.productName}
-            price={el.precio} />;
-        })
-      : <Loader/>}
-      </div>
 
+      <div className={styles.mainContent}>
+        {!IsLoading ? (
+          Elements.map((el, key) => {
+            return (
+              <PreviewHat
+                key={key}
+                link={`/products/${el.id}`}
+                image={el.imageUrl}
+                name={el.productName}
+                price={el.precio}
+              />
+            );
+          })
+        ) : (
+          <Loader />
+        )}
+      </div>
     </main>
-    );
+  );
   }
   
   export default NHL;

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import helpHttp from '../helpers/helpHttp';
 import styles from "../styles/RecomendationHat.module.css";
@@ -8,12 +9,12 @@ const RecomendationHat = () => {
   const [recomendation, setRecomendation] = useState(null);
   
   useEffect(() => {
-    helpHttp().get("https://kaal1.000webhostapp.com/API/homeHats")
+    axios.get("https://localhost:44345/api/products")
       .then(res => {
         let valoresRecomendar = [];
         for (let i = 0; i < 4; i++) {
-          let random = Math.floor(Math.random()*res.length);
-          let values = res[random];
+          let random = Math.floor(Math.random()*res.data.length);
+          let values = res.data[random];
           valoresRecomendar.push(values);
         }
         setRecomendation(valoresRecomendar);
@@ -26,11 +27,10 @@ const RecomendationHat = () => {
       <div className={styles.recomendationContainer}>
         {recomendation
         ? recomendation.map((el, key) => {
-          let link = el.productName.replace(/ /g,"-");
           return <PreviewRecomendation
             key={key}
-            link={`/products/${link}`}
-            image={el.imageURL}
+            link={`/products/${el.id}`}
+            image={el.imageUrl}
             name={el.productName}
             price={el.precio} />;
           })

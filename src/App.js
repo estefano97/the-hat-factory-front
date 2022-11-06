@@ -10,7 +10,7 @@ import Profile from './pages/Profile/index';
 import Register from './pages/Register';
 import HistoryCart from './pages/HistoryCart';
 import Footer from './pages/Footer';
-import FavoriteProducts from './pages/FavoriteProducts';
+import FavoriteProducts from './pages/Profile/FavoriteProducts';
 import MLB from './pages/MLB';
 import NBA from './pages/NBA';
 import NFL from "./pages/NFL";
@@ -86,7 +86,7 @@ function App() {
 
         <Route path="/favorite-products" element={<FavoriteProducts userData={userData}/>}/>
 
-        <Route path="/products/:productPath" element={<ProductPage userData={userData} cartLS={cartLS} setCartLS={setCartLS} />}/>
+        <Route path="/products/:idProduct" element={<ProductPage userData={userData} cartLS={cartLS} setCartLS={setCartLS} />}/>
 
         <Route path="/search/:searchPath" element={<SearchPage/>}/>
 

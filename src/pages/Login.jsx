@@ -23,7 +23,7 @@ const Login = ({userData, setUserData}) => {
             setIsLoading(true);
             let data = {
                 email: getValues().email,
-                userPass: getValues().password
+                Password: getValues().password
             }
     
             let res =  await LoginAuth(data);
@@ -49,7 +49,7 @@ const Login = ({userData, setUserData}) => {
                 : ""}
             </div>
 
-            {userData.status ? <Navigate replace to="/"/> : ""}
+            {IsSuccess ? <Navigate replace to="/"/> : ""}
             <form onSubmit={handleSubmit(handleSubmitLogin)}>
                 <p>Email</p>
                 <input

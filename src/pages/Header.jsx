@@ -17,7 +17,7 @@ const Header = (props) => {
                 <Link to="/" className={styles.menuLogo}>
                     <img src="/ProductsIMGs/assets/thf.png" alt="the-hat-factory-logo" />
                 </Link>
-                {props.userData.status
+                {props.userData.id
                 ? <Link to="/profile" className={styles.sesion}>Ver Perfil</Link>
                 : <Link to="/login" className={styles.sesion}>Iniciar Sesión</Link>}
 
@@ -27,7 +27,7 @@ const Header = (props) => {
                         className={styles.menuCart}>
                         <i className="fas fa-cart-arrow-down"></i>
                     </button>
-                    :  props.userData.status
+                    :  props.userData.id
                         ? <Link to="/cart" className={styles.menuCart}>
                             <i className="fas fa-cart-arrow-down"></i>
                         </Link>

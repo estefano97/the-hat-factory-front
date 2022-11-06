@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import PreviewHat from '../components/PreviewHat';
-import styles from '../styles/Home.module.css';
-import helpHttp from '../helpers/helpHttp.js';
-import Loader from '../components/Loader';
-
+import React, { useEffect, useState } from "react";
+import PreviewHat from "../components/PreviewHat";
+import styles from "../styles/Home.module.css";
+import Loader from "../components/Loader";
+import axios from "axios";
 
 function Home() {
-
-  const [responseAPI, setResponseAPI] = useState(null);
+  const [Elements, setElements] = useState([]);
+  const [IsLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    helpHttp().get("https://kaal1.000webhostapp.com/API/homeHats")
-      .then(res => {
-        setResponseAPI(res);
+    setIsLoading(true);
+    axios
+      .get("https://localhost:44345/api/products")
+      .then((res) => {
+        setElements(res.data);
       })
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
@@ -21,21 +23,24 @@ function Home() {
       <h2>Trendring Hats 🔥🔥🔥</h2>
 
       <div className={styles.mainContent}>
-      {responseAPI
-      ? responseAPI.map((el, key) => {
-          let link = el.productName.replace(/ /g,"-");
-          return <PreviewHat
-            key={key}
-            link={`/products/${link}`}
-            image={el.imageURL}
-            name={el.productName}
-            price={el.precio} />;
-        })
-      : <Loader/>}
+        {!IsLoading ? (
+          Elements.map((el, key) => {
+            return (
+              <PreviewHat
+                key={key}
+                link={`/products/${el.id}`}
+                image={el.imageUrl}
+                name={el.productName}
+                price={el.precio}
+              />
+            );
+          })
+        ) : (
+          <Loader />
+        )}
       </div>
-
     </main>
-    );
-  }
-  
-  export default Home;
+  );
+}
+
+export default Home;

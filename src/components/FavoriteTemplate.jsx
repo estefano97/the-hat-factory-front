@@ -1,30 +1,27 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 import helpHttp from "../helpers/helpHttp";
 import styles from "../styles/FavoriteTemplate.module.css";
 
 const FavoriteTemplate = (props) => {
-    console.log(props)
-    let link = props.data.imageURL.replace(/-/g," ");
-    let name = props.data.productName.replace(/ /g,"-");
+    
+    let link = props.data.imageUrl.replace(/-/g," ");
     const handleDelete = (e) => {
-        let userEmail = props.userData.email;
 
-        if(props.data.producto_id === e.target.dataset.id) {
-            helpHttp().post("https://kaal1.000webhostapp.com/API/favoriteProducts", {
-            body: {
-                productDelete: e.target.dataset.id,
-                userEmail: userEmail
-            },
-            Headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
+        if(props.data.id === e.target.dataset.id) {
+
+            let data = {
+                idProduct: e.target.dataset.id,
+                idUser: props.userData.id
             }
-            })
+
+            console.log(data);
+
+            axios.post("https://localhost:44345/api/favorites/remove", data)
             .then(res => {
                 window.location.reload();
             })
         }
-
     }
 
     return(
@@ -33,8 +30,8 @@ const FavoriteTemplate = (props) => {
             <div className={styles.FavImageAndActions}>
                 <img src={link} alt={props.data.productName} />
                 <div className={styles.FavActions}>
-                    <Link to={`/products/${name}`}><i className="far fa-eye"></i></Link>
-                    <button><i onClick={handleDelete}data-id={props.data.producto_id} className="fas fa-times"></i></button>
+                    <Link to={`/products/${props.data.id}`}><i className="far fa-eye"></i></Link>
+                    <button><i onClick={handleDelete}data-id={props.data.id} className="fas fa-times"></i></button>
                 </div>
             </div>
         </div>
