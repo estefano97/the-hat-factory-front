@@ -4,19 +4,18 @@ const CompraTemplate = (props) => {
   return (
     <div className={styles.compraContainer}>
       <div className={styles.dataBuy}>
-        <p>Fecha de Compra: {props.el.create_time}</p>
-        <p>ID de la Compra: {props.el.id_compraPayPal}</p>
-        <p>Precio Total De Compra: ${props.el.valueBuy}</p>
+        <p>Fecha de Compra: {props.el.fechaCompra}</p>
+        <p>ID de la Compra: {props.el.idPaypal}</p>
+        <p>Precio Total De Compra: ${props.el.totalValue}</p>
       </div>
       <h3>Productos Comprados: </h3>
       <div>
-        { Array.isArray(props.el.dataComprada)
-        ?
-        props.el.dataComprada.map((el, key) => {
+        {Array.isArray(props.el.productoCompras) ? (
+          props.el.productoCompras.map((el, key) => {
             return (
               <div key={key} className={styles.productsBuy}>
                 <p>
-                  <b>Producto:</b> {el.productName}
+                  <b>Producto:</b> {el.producto.productName}
                 </p>
                 <p>
                   <b>Talla:</b> {el.productTalla}
@@ -24,7 +23,9 @@ const CompraTemplate = (props) => {
               </div>
             );
           })
-          : <p className={styles.noDisponible}>No Disponible</p>}
+        ) : (
+          <p className={styles.noDisponible}>No Disponible</p>
+        )}
       </div>
       <hr />
     </div>

@@ -1,8 +1,8 @@
 import { Navigate } from "react-router";
 import styles from "../styles/HistoryCart.module.css";
-import helpHttp from "../helpers/helpHttp.js";
 import { useState } from "react";
 import CompraTemplate from "../components/CompraTemplate";
+import axios from "axios";
 
 const HistoryCart = (props) => {
   const datosUser = JSON.parse(window.localStorage.getItem("loggedTHF")) || "";
@@ -13,31 +13,15 @@ const HistoryCart = (props) => {
 
   const handleGetHistory = (e) => {
     e.preventDefault();
-
-    helpHttp()
-      .post("http://localhost/the-hat-factory/getCart", {
-        body: {
-          email: datosUser.response.email,
-          userPass: e.target.userPass.value,
-        },
-        Headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
+    axios
+      .post("https://localhost:44345/api/buys/GetAll", {
+        Email: datosUser.email,
+        Password: e.target.userPass.value,
       })
       .then((res) => {
-        if (!res.status) {
-          setErrorMessage(res.text);
-          setStatus(false);
-        } else {
-          setStatus(true);
-          let values = res.text.map((el) => {
-            el.dataComprada = JSON.parse(el.dataComprada);
-            return el;
-          });
-          setData(values);
-          console.log(values);
-        }
+        setStatus(true);
+        setData(res.data);
+        console.log(res.data)
       });
   };
 
@@ -65,12 +49,14 @@ const HistoryCart = (props) => {
         </div>
       ) : (
         <div className={styles.historyCompras}>
-          <h2>Compras De {datosUser.response.nombreCompleto}:</h2>
+          <h2>Compras De {datosUser.nombreCompleto}:</h2>
           <hr />
           <div>
-            {Data.map((el, key) => {
-              return <CompraTemplate el={el} key={key} />;
-            })}
+            {Data.length >= 1 
+            ?  Data.map((el, key) => {
+                return <CompraTemplate el={el} key={key} />
+            }) 
+            : <p>Cargando...</p>}
           </div>
         </div>
       )}

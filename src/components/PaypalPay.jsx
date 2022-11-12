@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import helpHttp from "../helpers/helpHttp.js";
+import axios from "axios";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
@@ -13,10 +13,14 @@ function PaypalPay (props) {
   let dataUser = JSON.parse(window.localStorage.getItem("loggedTHF")) || "";
   
 
-  props.cartLS.forEach(el => productsBuy.push({
-    productName: el.productName,
-    productTalla: el.talla
-  }));
+  props.cartLS.forEach(el => {
+    console.log(el);
+    productsBuy.push({
+      Price: el.precio,
+      ProductId: el.producto_id,
+      ProductTalla: el.talla
+    })
+  });
 
   const createOrder = (data, actions) => {
     return actions.order.create({
@@ -35,22 +39,13 @@ function PaypalPay (props) {
     return actions.order.capture()
     .then(detalles => {
       let dataBuyApprove = {
-        create_time: detalles.create_time,
-        user_mail: dataUser.response.email,
-        productsBuy: productsBuy,
-        id_compra: detalles.id,
-        user_name: dataUser.response.nombreCompleto,
-        user_phone: dataUser.response.telefono,
-        valueBuy: detalles.purchase_units[0].amount.value
+        IdPaypal: detalles.id,
+        IdUsuarioCompra: dataUser.id,
+        TotalValue: detalles.purchase_units[0].amount.value,
+        ProductoCompra: productsBuy,
       };
-
-      helpHttp().post("http://localhost/the-hat-factory/buyAproved", {
-        body: dataBuyApprove,
-        Headers: {
-            "Content-Type":"application/json",
-            "Accept": "application/json",
-        }
-      })
+      console.log(dataBuyApprove)
+      axios.post("https://localhost:44345/api/buys", dataBuyApprove)
       .then(res => {
         window.localStorage.removeItem("CartTHF");
         window.location.href = "/buy-aproved";

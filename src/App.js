@@ -22,6 +22,7 @@ import SearchPage from './pages/SearchPage';
 import CartPage from './pages/CartPage';
 import BuyAproved from './pages/BuyAproved';
 import UserConfig from './pages/Profile/userConfig';
+import ChangePassword from './pages/Profile/ChangePassword';
 
 function App() {
   
@@ -61,6 +62,8 @@ function App() {
         <Route path="/profile" element={<Profile userData={userData} setUserData={setUserData} initialUserData={initialUserData}/>} />
 
         <Route path="/user-config" element={<UserConfig/>} />
+
+        <Route path="/change-password" element={<ChangePassword/>} />
 
         <Route path="/buy-aproved" element={<BuyAproved/>} />
 
